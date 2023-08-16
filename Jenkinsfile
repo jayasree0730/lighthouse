@@ -1,6 +1,9 @@
 pipeline {
   
-  agent any
+  agent { docker { image 'node:8.12.0' } }
+    environment {
+        HOME = '.'
+    }
 
      
   stages {
@@ -13,7 +16,6 @@ pipeline {
      
     stage('Build') {
       steps {
-        sudo usermod -a -G docker jenkins
          sh 'npm install'
          sh 'npm install puppeteer'
          sh 'node ./demo.js'
