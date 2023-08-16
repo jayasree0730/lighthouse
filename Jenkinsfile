@@ -13,7 +13,7 @@ pipeline {
      
     stage('Build') {
       steps {
-        
+        sh 'npm install puppeteer'
          sh 'node ./demo.js'
       }
     }  
