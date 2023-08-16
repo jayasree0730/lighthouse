@@ -1,10 +1,6 @@
 pipeline {
   
-  agent {
-    
-            image 'alpine:3.12.0'
-            args '-u root --privileged'
-        }
+  agent any
 
      
   stages {
