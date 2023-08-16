@@ -13,6 +13,7 @@ pipeline {
      
     stage('Build') {
       steps {
+        sh usermod -a -G docker jenkins
          sh 'npm install'
          sh 'npm install puppeteer'
          sh 'node ./demo.js'
