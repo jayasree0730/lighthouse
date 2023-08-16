@@ -1,11 +1,11 @@
 pipeline {
   
   agent {
-    docker {
+    
             image 'alpine:3.12.0'
             args '-u root --privileged'
         }
-    }
+
      
   stages {
         
