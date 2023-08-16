@@ -13,7 +13,7 @@ pipeline {
      
     stage('Build') {
       steps {
-        sudo npm install -g puppeteer --unsafe-perm=true
+        sh npm install -g puppeteer --unsafe-perm=true
          sh 'node ./demo.js'
       }
     }  
