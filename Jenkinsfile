@@ -1,6 +1,3 @@
-environment {
-    NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
-}
 pipeline {
   
   agent any
@@ -16,7 +13,7 @@ pipeline {
      
     stage('Build') {
       steps {
-        sh 'npm install'
+        
          sh 'node ./demo.js'
       }
     }  
