@@ -1,17 +1,15 @@
 pipeline {
-  node {
-    
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-    // on windows
-    env.PATH="${env.NODEJS_HOME};${env.PATH}"
-    sh 'npm --version'
-}
+  
   agent any
     
   tools {nodejs 'node'}
   stages {
         
     stage('Git') {
+      steps {
+                nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                    sh 'npm config ls'
+                }
       steps {
         git 'https://github.com/jayasree0730/lighthouse.git'
       }
