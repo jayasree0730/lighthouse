@@ -1,9 +1,8 @@
 pipeline {
   
-  agent { docker { image 'node:8.12.0' } }
-         environment {
-        HOME = '//Users//jsabinkari//Documents//Lighthouse_Task'
-    }
+  agent any
+    
+  tools {nodejs "node"}
   stages {
         
     stage('Git') {
@@ -19,8 +18,12 @@ pipeline {
          bat 'node ./demo.js'
       }
     }  
-    
+    stage('Test') {
+      steps {
+        bat 'node test'
+      }
             
         }
   }
+}
 
