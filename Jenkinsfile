@@ -7,9 +7,9 @@ pipeline {
         
     stage('Git') {
       steps {
-                nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') 
                     sh 'npm config ls'
-                }
+                
       steps {
         git 'https://github.com/jayasree0730/lighthouse.git'
       }
