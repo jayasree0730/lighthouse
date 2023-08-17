@@ -1,5 +1,11 @@
 pipeline {
-  
+  node {
+    
+    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    // on windows
+    env.PATH="${env.NODEJS_HOME};${env.PATH}"
+    sh 'npm --version'
+}
   agent any
     
   tools {nodejs 'node'}
@@ -13,14 +19,14 @@ pipeline {
      
     stage('Build') {
       steps {
-        bat 'npm install'
-         bat 'npm install puppeteer'
-         bat 'node ./demo.js'
+        sh 'npm install'
+         sh 'npm install puppeteer'
+       sh 'node ./demo.js'
       }
     }  
     stage('Test') {
       steps {
-        bat 'node test'
+        sh 'node test'
       }
             
         }
