@@ -14,9 +14,9 @@ pipeline {
      
     stage('Build') {
       steps {
-         sh 'npm install'
-         sh 'npm install puppeteer'
-         sh 'node ./demo.js'
+        bat 'npm install'
+         bat 'npm install puppeteer'
+         bat 'node ./demo.js'
       }
     }  
     
