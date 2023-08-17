@@ -2,7 +2,7 @@ pipeline {
   
   agent { docker { image 'node:8.12.0' } }
          environment {
-        HOME = 'C:\Users\jsabinkari\Documents\Lighthouse_Task'
+        HOME = 'C:/Users/jsabinkari/Documents/Lighthouse_Task'
     }
   stages {
         
